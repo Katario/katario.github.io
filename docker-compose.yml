@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  portfolio:
+    container_name: portfolio
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - 'node_modules:/app/node_modules'
+    ports:
+      - '8089:8080'
+    networks:
+      portfolio_network:
+        ipv4_address: 172.24.0.2
+volumes:
+  node_modules:
+
+networks:
+  portfolio_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.24.0.0/20"
