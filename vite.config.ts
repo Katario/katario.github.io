@@ -1,10 +1,11 @@
 import { fileURLToPath, URL } from "url";
-
 import { defineConfig } from "vite";
+
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -13,13 +14,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
-    port: 8089,
-    hmr: {
-      path: '0.0.0.0',
-    },
-    watch: {
-      usePolling: true
-    }
-
+    port: 8089
   }
 });

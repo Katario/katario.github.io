@@ -1,0 +1,17 @@
+:root {
+    /* Day theme variables */
+    --base-white: #FFFFF0;
+    --base-black: #071421;
+    --background-color: rgb(103, 209, 251);
+    --background-gradient: linear-gradient(rgb(155, 226, 254) 0%, rgb(103, 209, 251) 100%);
+    --opacity-cloud: 0.6;
+    --scale-cloud: 0.3;
+
+    /* Night theme variables */
+    --dark-base-white: #FFFFF0;
+    --dark-base-black: #071421;
+
+    /* Stars variables */
+    --number-of-stars: 250;
+    --ratio: 2000;
+}
