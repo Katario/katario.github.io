@@ -1,6 +1,45 @@
-# portfolio
+# Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+This Project is made with Vue.js and ViteJs.
+
+This will be the entrypoints for all my incoming projects.
+
+### Projects Currently Displayed on the site :
+
+- 
+
+## How does it works?
+To use in local, you should use docker.
+Just type :
+```sh
+docker exec -it portfolio npm install && npm run dev
+```
+
+Et voilà, it should work properly!
+
+Note : To deploy, there is a git subtree linked to the ./dist folder. Just normally
+```sh
+docker exec -it portfolio npm run build
+cd ./dist
+git add && git commit -m "My Commit Message"
+git push
+```
+
+
+## TODO:
+
+- Clean the readme, use a default template, the simplest possible
+- Add clouds in the day part
+- Add stars in the night part
+- Add sections to display my future works (block below ? Another page ? To be defined)
+
+
+
+
+
+
+
+# DEFAULT README! TO UPDATE
 
 ## Recommended IDE Setup
 
