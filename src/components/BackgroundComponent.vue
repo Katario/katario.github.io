@@ -81,11 +81,13 @@ export default {
 
   /* Moving clouds */
   @keyframes animatedClouds {
-    0% {
-      margin-left: -500px;
+    from {
+      visibility: visible;
+      left: -300px;
     }
-    100% {
-      margin-left: calc(100% + 200px);
+    to {
+      visibility: hidden;
+      left: 100%;
     }
   }
 
@@ -94,7 +96,7 @@ export default {
   }
 
   .background-component {
-    position:absolute;
+    position: absolute;
     z-index: -999;
     width:100%;
     height:100%;
@@ -134,46 +136,56 @@ export default {
   }
 
   .moving-clouds {
-    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
+    opacity: 1;
   }
 
   .cloud-1 {
     position: absolute;
     top: 10%;
-    animation: animatedClouds 35s linear infinite;
+    animation: animatedClouds var(--duration-animation-cloud) 4s linear infinite;
+    animation-fill-mode: backwards;
     opacity: var(--opacity-cloud);
     transform: scale(var(--scale-cloud));
+    visibility: hidden;
   }
   .cloud-2 {
     position: absolute;
     top: 22%;
-    animation: animatedClouds 20s linear infinite;
+    animation: animatedClouds var(--duration-animation-cloud) 22s linear infinite;
+    animation-fill-mode: backwards;
     opacity: var(--opacity-cloud);
     transform: scale(var(--scale-cloud));
+    visibility: hidden;
   }
   .cloud-3 {
     position: absolute;
     top: 48%;
-    animation: animatedClouds 30s linear infinite;
+    animation: animatedClouds var(--duration-animation-cloud) 15s linear infinite;
+    animation-fill-mode: backwards;
     opacity: var(--opacity-cloud);
     transform: scale(var(--scale-cloud));
+    visibility: hidden;
   }
   .cloud-4 {
     position: absolute;
     top: 71%;
-    animation: animatedClouds 18s linear infinite;
+    animation: animatedClouds var(--duration-animation-cloud) 9s linear infinite;
+    animation-fill-mode: backwards;
     opacity: var(--opacity-cloud);
     transform: scale(var(--scale-cloud));
+    visibility: hidden;
   }
   .cloud-5 {
     position: absolute;
     top: 89%;
-    animation: animatedClouds 25s linear infinite;
+    animation: animatedClouds var(--duration-animation-cloud) 29s linear infinite;
+    animation-fill-mode: backwards;
     opacity: var(--opacity-cloud);
     transform: scale(var(--scale-cloud));
+    visibility: hidden;
   }
 
   .cloud {
@@ -311,6 +323,10 @@ export default {
 
   .dark .stars {
     display: block;
+  }
+
+  .dark .moving-clouds {
+    opacity: 0;
   }
 
 </style>

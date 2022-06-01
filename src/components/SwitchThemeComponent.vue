@@ -1,8 +1,8 @@
 <template>
   <div class="switch-theme">
     <SwitchThemeButtonComponent
-      :firstIcon=sunIcon
-      :lastIcon=moonIcon
+      :leftIcon=sunIcon
+      :rightIcon=moonIcon
       alternativeTheme='dark' />
   </div>
 </template>

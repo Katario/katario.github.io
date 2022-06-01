@@ -7,8 +7,8 @@
       :checked=isChecked
     />
     <label class="label" for="switch-theme-button-checkbox" v-on:click="onCheckedSwitchTheme">
-      <img :src="firstIcon" alt="" />
-      <img :src="lastIcon" alt="" />
+      <img :src="leftIcon" alt="" />
+      <img :src="rightIcon" alt="" />
       <div class="switch"></div>
     </label>
   </div>
@@ -21,8 +21,8 @@ export default {
   components: {
   },
   props: [
-    'firstIcon',
-    'lastIcon',
+    'leftIcon',
+    'rightIcon',
     'alternativeTheme',
   ],
   data: function () {
