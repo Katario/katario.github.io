@@ -16,6 +16,7 @@
 
 
     /* Stars variables */
-    --number-of-stars: 250;
-    --ratio: 2000;
+    --twinkle-duration: 5s;
+    --twinkle-delay: 30s;
+    --star-size: 2px;
 }

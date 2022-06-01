@@ -9,6 +9,18 @@ function updateCloudProperties(cloud) {
   cloud.style.setProperty('--duration-animation-cloud', duration + 's');
 }
 
+function generateStar(x, y) {
+  const star = document.createElement('div');
+  star.classList.add('star');
+  star.style.left = x + 'px';
+  star.style.top = y + 'px';
+
+  star.style.setProperty('--star-size', getRandomBetween(1, 3) + 'px');
+  star.style.setProperty('--twinkle-duration', getRandomBetween(1, 5) + 's');
+  star.style.setProperty('--star-delay', getRandomBetween(1, 30) + 's');
+
+  return star;
+}
 
 export function generateRandomBackground(domElem) {
   const clouds = {
@@ -18,7 +30,6 @@ export function generateRandomBackground(domElem) {
     cloud4: domElem.querySelector('.cloud-4'),
     cloud5: domElem.querySelector('.cloud-5'),
   };
-  // changeProperties();
 
   Object.values(clouds).forEach((cloud) => {
     cloud.addEventListener(
@@ -30,4 +41,12 @@ export function generateRandomBackground(domElem) {
       () => updateCloudProperties(cloud)
     )}
   );
+
+  const nightsky = domElem.querySelector('.nightsky');
+  for (let index = 0; index < 500; index++) {
+    let x = getRandomBetween(1, nightsky.offsetWidth);
+    let y = getRandomBetween(1, nightsky.offsetHeight);
+
+    nightsky.append(generateStar(x, y));
+  }
 }

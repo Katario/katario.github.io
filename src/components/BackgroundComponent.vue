@@ -4,20 +4,7 @@
     <div class="sun-circle inner"></div>
     <div class="sun-circle middle"></div>
     <div class="sun-circle outer"></div>
-    <div class="fixed-clouds">
-    <!-- <div class="cloud"></div> -->
-    </div>
-    <!-- End Day -->
 
-    <!-- Night -->
-    <div class="stars"></div>
-    <div class="position-moon">
-      <div class="moon-circle crescent"></div>
-      <div class="moon-circle shadow"></div>
-    </div>
-    <!-- End Night -->
-
-    <!-- End Cloudy -->
     <div class="moving-clouds">
       <div class="cloud-1">
         <div class="cloud"></div>
@@ -35,7 +22,16 @@
         <div class="cloud"></div>
       </div>
     </div>
-    <!-- End Cloudy -->
+    <!-- End Day -->
+
+    <!-- Night -->
+    <div class="nightsky"></div>
+    <div class="position-moon">
+      <div class="moon-circle crescent"></div>
+      <div class="moon-circle shadow"></div>
+    </div>
+    <!-- End Night -->
+
   </div>
 </template>
 
@@ -90,6 +86,17 @@ export default {
       left: 100%;
     }
   }
+
+  /* Shinning stars */
+  @keyframes twinklingStars {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+        box-shadow: 0 0 5px 0.5px rgba(150, 150, 150, 0.6);
+    }
+}
 
   body > div:first-child {
     background: transparent;
@@ -230,13 +237,22 @@ export default {
     top: -90px;
   }
 
-  .stars {
-    display: none;
-    height: 5px;
-    width: 5px;
-    box-shadow: var(--stars);
-    opacity: 0.3;
-    z-index: -99
+  .nightsky {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .star {
+    position: absolute;
+    width: var(--star-size);
+    height: var(--star-size);
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+    animation-duration: var(--twinkle-duration);
+    animation-delay: var(--twinkle-delay);
   }
 
   .position-moon {
@@ -321,8 +337,8 @@ export default {
     display: block;
   }
 
-  .dark .stars {
-    display: block;
+  .dark .nightsky {
+    opacity: 1;
   }
 
   .dark .moving-clouds {
