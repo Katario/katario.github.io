@@ -1,6 +1,6 @@
 <template>
   <div class="button-component">
-    <a :href="url">{{ text }}</a>
+    <a :href="url" target="_blank">{{ text }}</a>
   </div>
 </template>
 
