@@ -36,6 +36,10 @@ export default {
           url: 'https://www.linkedin.com/in/hadrien-boe-web-developer/',
           text: 'Linkedin',
         },
+        CV: {
+          url: '/cv-hadrien-boe.pdf',
+          text: 'CV',
+        },
       },
     };
   },

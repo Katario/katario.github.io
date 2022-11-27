@@ -16,19 +16,5 @@ export default {
     Intro,
     ContactComponent,
   },
-  data: function () {
-    return {
-      buttonList: {
-        github: {
-          url: 'https://google.fr',
-          text: 'Github',
-        },
-        linkedin: {
-          url: 'https://www.linkedin.com/in/hadrien-boe-web-developer',
-          text: 'Linkedin',
-        },
-      },
-    };
-  },
 };
 </script>

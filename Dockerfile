@@ -1,21 +1,16 @@
-# base image
-FROM node:lts-alpine
+# Install dependencies needed for both dev & production build
+FROM node:current-alpine
 
-# set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package*.json ./
 
-# install and cache app dependencies
-COPY package.json /app/package.json
-
-# install and cache app dependencies
+# Run Clean Install instead of Install to get an exact extract of
+# package-lock.json
 RUN npm install
-
-RUN chown -R node.node /app
 
 COPY . .
 
-# start app
+EXPOSE 8089
+
 CMD ["npm", "run", "dev"]
