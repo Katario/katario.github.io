@@ -13,7 +13,7 @@ docker build --no-cache -t katario-portfolio .
 
 You run it:
 ```
-docker run -p 8089:8089 -it --pid=host --rm --name katario-portfolio -v ${PWD}/src:/usr/src/app/src -v ${PWD}/dist:/usr/src/app/dist katario-portfolio
+docker run -p 8089:8089 -it --pid=host --rm --name katario-portfolio -v ${PWD}/src:/usr/src/app/src -v ${PWD}/docs:/usr/src/app/docs katario-portfolio
 ```
 
 Et voilà, it should work properly!
