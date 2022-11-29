@@ -51,9 +51,11 @@ export default {
     padding: 0 20px;
     font-size: 18px;
   }
+
   .buttons-media {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    row-gap: 20px;
     justify-content: center;
     padding: 0;
   }
