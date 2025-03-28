@@ -212,7 +212,7 @@ export default {
     background: #fff;
     content: '';
     position: absolute;
-    z-indeX: -1;
+    z-index: -1;
   }
 
   .cloud:after {

@@ -18,6 +18,12 @@ docker run -p 8089:8089 -it --pid=host --rm --name katario-portfolio -v ${PWD}/s
 
 Et voilà, it should work properly!
 
+Don't Forget to build before pushing :
+
+```
+docker exec -it katario-portfolio npm run build
+```
+
 ## TODO:
 
 - Clean the readme, use a default template, the simplest possible

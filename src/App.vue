@@ -14,8 +14,6 @@ export default {
   created() {
     if (this.$cookies.isKey('theme')) {
       document.body.classList.add(this.$cookies.get('theme'));
-    } else {
-      console.log(this.$cookies.keys());
     }
   },
 };
