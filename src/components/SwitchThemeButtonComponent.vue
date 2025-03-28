@@ -9,7 +9,7 @@
     <label class="label" for="switch-theme-button-checkbox" v-on:click="onCheckedSwitchTheme">
       <img :src="leftIcon" alt="" />
       <img :src="rightIcon" alt="" />
-      <div class="switch"></div>
+      <div id="switch" class="on"></div>
     </label>
   </div>
 </template>
@@ -32,6 +32,11 @@ export default {
         : '',
     };
   },
+  mounted() {
+    if (!document.body.classList.contains(this.alternativeTheme)) {
+      document.getElementById('switch-theme-button-checkbox').checked = false;
+    }
+  },
   methods: {
     onCheckedSwitchTheme: function () {
       const bodyClass = document.body.classList;
@@ -49,7 +54,7 @@ export default {
 </script>
 
 <style lang="css">
-  .switch-theme-button .checkbox:checked + .label .switch {
+  .switch-theme-button .checkbox:checked + .label #switch {
     transform: translateX(24px);
   }
 
@@ -73,7 +78,7 @@ export default {
     justify-content: space-between;
   }
 
-  .switch-theme-button .label .switch {
+  .switch-theme-button .label #switch {
     background-color: var(--base-white);
     position: absolute;
     top: 3px;
@@ -93,7 +98,7 @@ export default {
     background-color: var(--dark-base-white);
   }
 
-  .dark .switch-theme-button .label .switch {
+  .dark .switch-theme-button .label #switch {
     background-color: var(--dark-base-black);
   }
 </style>

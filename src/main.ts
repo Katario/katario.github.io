@@ -1,4 +1,3 @@
-
 import VueCookies from 'vue-cookies';
 import { createApp } from 'vue';
 
