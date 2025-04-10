@@ -24,10 +24,10 @@ export default {
   data: function () {
     return {
       buttonList: {
-        blog: {
-          url: 'https://katario.hashnode.dev/' ,
-          text: 'Blog'
-        },
+        // blog: {
+        //   url: 'https://katario.hashnode.dev/' ,
+        //   text: 'Blog'
+        // },
         github: {
           url: 'https://github.com/Katario',
           text: 'Github',

@@ -1,7 +1,7 @@
 <template>
-  <div class="button-component">
-    <a :href="url" target="_blank">{{ text }}</a>
-  </div>
+  <a :href="url" class="button-component" target="_blank">
+    {{ text }}
+  </a>
 </template>
 
 <script>
@@ -17,17 +17,19 @@ export default {
 <style lang="css">
   .button-component {
     width: 120px;
+    height: 24px;
     text-align: center;
-    padding: 7px 10px;
+    padding: 8px 10px;
     border: 2px solid var(--base-black);
     background-color: var(--base-white);
     transition: 0.2s ease-in-out;
+    display: block;
   }
 
-  .button-component a {
+  .button-component {
     color: var(--base-black);
     transition: 0.2s ease-in-out;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
   }
 
@@ -35,7 +37,7 @@ export default {
     background-color: #33414F;
   }
 
-  .button-component:hover a {
+  .button-component:hover {
     color: var(--base-white);
   }
 
